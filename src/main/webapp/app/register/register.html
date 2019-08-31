@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../../css/main.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css"
+	href="../../css/framework/validationEngine.jquery.css" />
+<link href="../../css/logsign.css" type="text/css" rel="stylesheet" />
+<script src="../../js/jquery.js" type="text/javascript"></script>
+<script src="../../js/banner.js" type="text/javascript"></script>
+<script src="../../js/common.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../js/lhgdialog/lhgdialog.js"></script>
+<script type="text/javascript" src="../../js/framework/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript" src="../../js/framework/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="../../js/framework/sea.js"></script>
+<script type="text/javascript" src="../../js/framework/jquery.md5.js"></script>
+<script language="JavaScript">
+$(function(){
+	seajs.use("../../js/register/register");	
+})
+</script>
+<style type="text/css">
+.onShow {
+	background-position: 3px -147px;
+	border-color: #40B3FF;
+	color: #959595
+}
+.onFocus {
+	background-position: 3px -147px;
+	border-color: #40B3FF;
+}
+.onLamp {
+	background-position: 3px -200px
+}
+.onTime {
+	background-position: 3px -1356px
+}
+.form-control {
+	margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+	<div class="header">
+		<div class="nav">
+			<a class="logo" href="../index/index.html"> <img
+				src="../../images/tester.png" class="logo_style" alt="柠檬软件测试班" />
+			</a>
+			<div class="top-login">
+				<a href="register.html" class="register">注册</a>| <a
+					href="../login/login.html" class="signin">登录</a>
+			</div>
+		</div>
+	</div>
+	<div class="login-wrap clearfix">
+		<div class="login-content clearfix">
+			<div class="reg-cont">
+				<div class="login-title">
+					<h2>新用户注册</h2>
+					<span>已有帐号？<a href="../login/login.html">马上登录</a></span>
+				</div>
+				<div class="form-conttrols">
+					<form id="myform">
+						<div class="form-control">
+							<input type="text" name="username" id="username"
+								class="ipt ipt-email validate[required,custom[email],maxSize[32],ajax[ajaxCheckUserNameRepeat]]"
+								placeholder="请输入登录邮箱" />
+						</div>
+						<div class="form-control">
+							<input type="password" name="password" id="password"
+								class="ipt ipt-pwd validate[required,custom[password]]"
+								placeholder="请输入密码" />
+						</div>
+						<div class="form-control">
+							<input type="password" name="pwdconfirm" id="pwdconfirm"
+								class="ipt ipt-pwd validate[required,custom[password],equals[password]]"
+								placeholder="请再次输入密码" />
+						</div>
+						<div class="form-control clearfix">
+						<p class="tips"></p>
+							<input type="button" id="signup-button"
+								class="btn btn-blue login-submit btn-block " value="注册" />
+						</div>
+					</form>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+	<div class="footer">
+		<div class="waper">
+			<div class="footer-info">
+				<p>
+					Powered by www.ningmengban.com Copyright ©2016-2030   湖南省零檬信息技术有限公司   版权所有
+					
+				</p>
+			</div>
+
+
+			<div class="footer-media">
+				<a class="followus-weibo" href="http://www.cnblogs.com/liulinghua90/p/"
+					target="_blank" title="技术微博"></a> <a class="followus-qzone"
+					href="http://user.qzone.qq.com/304034313"
+					target="_blank" title="QQ空间"></a> 
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

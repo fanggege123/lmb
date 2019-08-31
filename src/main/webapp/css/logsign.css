@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+
+.login-wrap{ width:100%; height:600px; background:#fff;}
+.login-content{ width:1000px; height:500px;  padding-top:100px; margin:0 auto;}
+.login-left{ width:330px;  padding-top:35px; padding-bottom:60px; margin:30px auto; }
+.login-title{ height:40px; color:#34495e;}
+.login-title h2{ line-height:40px; float:left; font-size:20px; font-weight:normal;}
+.login-title span{ font-size:14px; padding-top:12px; float: right;}
+.login-title span a{ color:#32a5e7;}
+
+.reg-cont{  width:330px;margin:30px auto;}
+
+.tips{ font-size:12px; height:30px; clear:both;color:red}
+.ipt-email{ background-position:0 0;}
+.ipt{ width:272px; font:14px; padding:9px 9px 9px 48px; background-color:#fff !important; background-image:url(../images/ipt-sprite.png) !important; background-repeat:no-repeat; color:#333; height:20px; border:1px solid #98a1a6; font-size:14px; margin-right:20px;}
+.form-control{ color:#9d9d9d;}
+::-webkit-input-placeholder { color: #9d9d9d;}
+:-moz-placeholder { color: #9d9d9d;}
+::-moz-placeholder{ color:#9d9d9d;}
+:-ms-input-placeholder {color: #9d9d9d;}
+
+.ipt-pwd{ background-position:0 -48px;}
+.ipt:-webkit-autofill {-webkit-box-shadow : 0 0 0px 1000px white inset;background-image:url(../images/ipt-sprite.png) !important; background-repeat:no-repeat;}
+.ipt-nick{ background-position:0 -96px;}
+.ipt-userqq{background-position:0 -144px;}
+.autologin{ float:left;}
+.checkbox{ vertical-align:middle; margin-top:-2px; margin-right:5px;}
+.form-control a{ color:#369; margin-left:10px; float:right;}
+.btn-block{ display:block; width:100%; padding-top:9px; padding-bottom:9px; font-size:16px;}
+.login-right{ float:left; margin-left:120px; padding-top:35px;}
+.login-right h2{ text-align:center; font-size:18px; font-weight:normal; line-height:40px; margin-bottom:40px;}
+.login-media{ text-align:center;}
+.login-media a{ display:block; width:160px; height:40px; line-height:40px; color:#fff; margin-bottom:20px;}
+.login-media a i{ display:block; width:25px; height:25px; background:url(../images/log-media.png) no-repeat; float:left; margin-top:7px; margin-left:7px;}
+.login-media .log-weixin,.login-media .log-weibo { display:none;}
+.login-media .log-weixin i{ background-position:-25px 0;}
+.login-media .log-qq i{ background-position:0 0;}
+.login-media .log-weibo i{ background-position:-50px 0;}
+.login-media span{ display:block; width:100%; height:40px;border-radius:2px; float:left; opacity:1;}
+.login-media .log-weixin span{ background:#05AF10;}
+.login-media .log-qq span{ background:#32a5e7;}
+.login-media .log-weibo span{ background:#EC5E5B; }
+.login-media a:hover span{ opacity:0.7;}
+
+/*passport-p2*/
+.form-control em{ font-size:16px; color:#333; font-style:normal; }

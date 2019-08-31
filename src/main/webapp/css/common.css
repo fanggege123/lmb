@@ -1,0 +1,26 @@
+	th{
+		white-space: nowrap;
+	}
+	.td_nowrap{
+		white-space: nowrap;
+	}
+	
+	
+.tbutton {
+    background: #e4ecfa none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 4px;
+    color: #46484c;
+    cursor: pointer;
+    font-family: "Î¢ÈíÑÅºÚ";
+    font-size: 14px;
+    line-height: 27px;
+    margin-top: 10px;
+    margin-left: 20px;
+    outline: medium none;
+    text-align: center;
+    width: 88px;
+}
+
+.tbutton:hover{background-color: #FB8927;color: #fff;}
+.tbutton:active{background: #e96d01;color:#fff;}

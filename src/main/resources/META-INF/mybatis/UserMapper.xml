@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+  
+<mapper namespace="com.lemon.dao.UserMapper">
+	<insert id="add" parameterType="com.lemon.pojo.User" >
+	insert into nm_user
+	<trim prefix="(" prefixOverrides=",">  
+			  <if test="id !=null">,id</if>
+			  <if test="username !=null">,username</if>
+			  <if test="password !=null">,password</if>
+			  <if test="nickname !=null">,nickname</if>
+			  <if test="sex !=null">,sex</if> 
+			  <if test="phone !=null">,phone</if>
+			  <if test="address !=null">,address</if>
+			  <if test="qq !=null">,qq</if>
+			  <if test="wechat !=null">,wechat</if>
+			  <if test="status !=null">,status</if>
+			  <if test="createDate !=null">,createDate</if>
+			  <if test="createUser !=null">,createUser</if>
+			  <if test="lastUpdateDate !=null">,lastUpdateDate</if>
+			  <if test="lastUpdateUser !=null">,lastUpdateUser</if>
+			  
+		</trim>
+	)
+	values
+	<trim prefix="(" prefixOverrides=",">  
+			  <if test="id !=null">,#{id,jdbcType=VARCHAR}</if>
+			  <if test="username !=null">,#{username,jdbcType=VARCHAR}</if>
+			  <if test="password !=null">,#{password,jdbcType=VARCHAR}</if>
+			  <if test="nickname !=null">,#{nickname,jdbcType=VARCHAR}</if>
+			  <if test="sex !=null">,#{sex,jdbcType=VARCHAR}</if>
+			  <if test="phone !=null">,#{phone,jdbcType=VARCHAR}</if>
+			  <if test="address !=null">,#{address,jdbcType=VARCHAR}</if>
+			  <if test="qq !=null">,#{qq,jdbcType=VARCHAR}</if>
+			  <if test="wechat !=null">,#{wechat,jdbcType=VARCHAR}</if>
+			  <if test="status !=null">,#{status,jdbcType=VARCHAR}</if>
+			  <if test="createDate !=null">,#{createDate}</if>
+			  <if test="createUser !=null">,#{createUser}</if>
+			  <if test="lastUpdateDate !=null">,#{lastUpdateDate}</if>
+			  <if test="lastUpdateUser !=null">,#{lastUpdateUser}</if>
+		</trim>
+	)
+  </insert>
+  
+  <select id="getUserByUserName" resultType="com.lemon.pojo.User"  parameterType="string">
+  	select * from nm_user where username=#{username}
+  </select>
+  
+  <select id="getUserByNickName" resultType="com.lemon.pojo.User"  parameterType="string">
+  	select * from nm_user where nickname=#{nickname}  
+  </select>
+  
+  <select id="getUserByNameAndPassword" resultType="com.lemon.pojo.User"  parameterType="com.lemon.pojo.User">
+  	select * from nm_user where username=#{username} and password=#{password}
+  </select>
+  
+  <select id="findById" resultType="com.lemon.pojo.User"  parameterType="string">
+  	select * from nm_user where id=#{userId}
+  </select>
+  
+  <select id="findByName" resultType="com.lemon.pojo.User"  parameterType="string">
+  	select * from nm_user where username=#{currentUser}
+  </select>
+  
+  <update id="update" parameterType="com.lemon.pojo.User">
+	    update nm_user 
+		<trim prefix="set" prefixOverrides=","> 
+			<if test="sex != null and sex != ''">
+			    ,sex = #{sex,jdbcType=VARCHAR}  
+			</if>
+					<if test="phone != null ">
+			    ,phone = #{phone,jdbcType=VARCHAR}
+			</if>
+			<if test="address != null">
+			    ,address = #{address,jdbcType=VARCHAR}
+			</if>
+					<if test="qq != null ">
+			    ,qq = #{qq,jdbcType=VARCHAR}
+			</if>
+					<if test="wechat != null ">
+			    ,wechat = #{wechat,jdbcType=VARCHAR}
+			</if>
+			<if test="status != null ">
+			    ,status = #{status,jdbcType=VARCHAR}
+			</if>
+			<if test="logoId != null ">
+			    ,logoId = #{logoId,jdbcType=VARCHAR}
+			</if>
+			<if test="password != null ">
+			    ,password = #{password,jdbcType=VARCHAR}
+			</if>
+			<if test="lastUpdateDate != null ">
+			    ,lastUpdateDate = #{lastUpdateDate}
+			</if>
+					<if test="lastUpdateUser != null ">
+			    ,lastUpdateUser = #{lastUpdateUser}
+			</if>
+			</trim>
+			where id=#{id}
+				
+	</update> 
+</mapper>   

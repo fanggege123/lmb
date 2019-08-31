@@ -1,0 +1,202 @@
+@CHARSET "UTF-8";
+/* 单文件上传 */
+.sfile_upload_layer {
+	width: 100%;
+	margin: 20px auto;
+}
+.sfile_upload_layer .p_tips {
+	margin: 0 0 10px;
+}
+.sfile_upload_layer .p_tips .p_tips_inner {
+	color: #ff7800;
+}
+.sfile_upload_layer .colum_1 {
+	float: left;
+	width: 60%;
+}
+
+.sfile_upload_layer .colum_2 {
+	float: right;
+	width: 40%;
+	text-align: right;
+}
+.sfile_upload_layer input[type='text']{
+	width: 100%; 
+	border: 1px solid #b7b7b7;
+	border-radius: 4px; 
+	padding: 2px 5px; 
+	vertical-align: middle;
+	height: 30px;
+}
+
+.sfile_upload_layer input[type='text'].title_input {
+	width: 60%; 
+}
+
+.sfile_upload_layer input.hiden {display:none;}
+.sfile_upload_layer .btn_sfile {
+	font-size: 14px; 
+	font-family: "微软雅黑",Arial; 
+	padding: 3px 5px; 
+	border-radius: 4px;  
+	background: #d4f3f7;
+  	border-color: #b5e6ec;  
+  	height: 30px;
+  	text-shadow: none;
+  	width: 100px;
+  	margin-left:10px;
+}
+
+.sfile_upload_layer .sfile_preview_layer{
+	width: 100%;
+	min-height: 250px;
+	margin-top: 10px;
+	border: 1px solid #e6e6e6; 
+	border-radius: 4px;
+	box-sizing: border-box;
+	padding: 5px 1px 1px;
+	background: #f2f2f2;
+	text-align:center;
+	position: relative;
+}
+
+.sfile_upload_layer .preview_box {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	height: 250px;
+}
+
+.sfile_preview_inner_box {
+	width: 100%;
+	height: 100%;
+}
+.sfile_upload_layer .preview_fake { 
+	 /* 该对象用户在IE下显示预览图片 */
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);   
+}   
+.sfile_upload_layer .preview_size_fake{ 
+	/* 该对象只用来在IE下获得图片的原始尺寸，无其它用途 */ 
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);     
+    visibility:hidden;
+    display: none;
+}   
+.sfile_upload_layer .img_preview { 
+	/* 该对象用户在FF下显示预览图片 */ 
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+}
+.sfile_upload_layer .img_title_box {
+	width: 100%;
+	height: 30px;
+	padding: 1px;
+	margin-bottom: 2px;
+	text-align: center;
+	font-size: 14px;
+	font-family: "微软雅黑",Arial;
+}
+
+.sfile_upload_layer .img_title_box p {
+	margin: 0px;
+}
+
+.sfile_button {
+	display: inline-block;
+	position: relative;
+	width: 90px;
+	height: 30px;
+	line-height: 1.4;
+	padding: 5px;
+	margin: 0;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	font-weight: 500;
+	text-align: center;
+	text-transform: none;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border:1px solid #b7b7b7;
+	border-radius: 3px;
+    box-sizing: border-box;
+    color: #555;
+    background:#f4f4f4;
+}
+.sfile_button:hover,
+.sfile_button:focus {
+	border-color: #ccc;
+	background:#e9e9e9;
+	color:#ff7800;
+}
+.sfile_button[disabled],
+.sfile_button[disabled]:hover,
+.sfile_button[disabled]:active {
+	cursor: not-allowed;
+	color:#555;
+	border-color:#ccc;
+	background:#e9e9e9;
+	opacity: 0.65;
+}
+
+.sfile_file_input {
+	position: absolute;
+	left: 5px;
+	top: 0;
+	width: 75px; /* 宽度不能变 */
+	height: 30px;
+	opacity: 0.0;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+.sfile_upload_layer .sfile_tips_layer {
+	border-radius: 4px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.uploading_layer {background: #ffffff; opacity: 0.8;}
+
+.sfile_upload_layer .sfile_tips_table {
+	width: 100%;
+	height: 100%;
+}
+
+.sfile_tips {
+	display: none;
+	padding: 6px 6px;
+	text-align: center;
+	background: #f02222;
+	font-size:14px;
+	font-family:"微软雅黑";
+	border:2px solid #c0c0c0;
+	border-radius: 4px;
+	color: #F7F7F7;
+}
+
+.sfile_uploading {
+	display: inline-block;
+	min-width: 100px;
+	padding-top: 72px;
+	background-image: url(../images/loading.gif);
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+.windowSize{
+	width:600px;
+	
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../../css/main.css" type="text/css" rel="stylesheet" />
+<script src="../../js/jquery.js" type="text/javascript"></script>
+<script src="../../js/common.js" type="text/javascript"></script>
+<script src="../../js/framework/sea.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".hover-btn").mouseover(function(){
+			$(this).find('.my-hidden').slideDown();
+		}).mouseleave(function(){
+			$(this).find('.my-hidden').slideUp();
+		});
+
+		$("#my-logout").click(function(){
+			var logout_url = ISS.Config.Global.rootUrl+"/mvc/user/logout.json";
+			$.post(logout_url,function(ret){
+				if(ret.success==true){
+					window.parent.location.href = "../login/login.html";
+				}
+			},'json');
+		});
+		
+		var findUserInfoUrl = ISS.Config.Global.rootUrl+"/mvc/user/getLoginUserInfo.json";
+		var noPhoto = "../../images/member/nophoto.gif";
+		$.post(findUserInfoUrl,function(ret){
+			if(ret.success==true){
+				if(ret.object!=null){
+					$("#wel").html("<font color=\"red\">"+ret.object.username+"</font>,欢迎你来到柠檬班学习");
+					$("#top_memu").show();
+					$(".top-login").hide();
+				}else{
+					$("#top_memu").hide();
+					$(".top-login").show();
+				}
+			}
+		},'json');
+		$("#community").trigger("click");
+	})
+</script>
+<script type="text/javascript">
+	function reinitIframe(){
+		var iframe = document.getElementById("mainFrame");
+		try{
+			var bHeight = iframe.contentWindow.document.body.scrollHeight;
+			var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+			var height = Math.min(bHeight, dHeight)+parseInt(30);
+			iframe.height = height;
+		}catch (ex){
+			
+		}
+	}
+	window.setInterval("reinitIframe()", 200);
+</script>
+</head>
+
+<body>
+	<!--头部开始-->
+	<div class="header">
+		<!--导航开始-->
+		<div class="nav">
+			<a class="logo" href="../index/index.html"> <img
+				src="../../images/tester.png" class="logo_style" alt="柠檬软件测试班" />
+			</a>
+			<ul class="nav-list">
+				<li class="subnav-wrap"><a href="#" class="nav-item"
+					target="_self" id="news">最新资讯</a></li>
+				<li class="subnav-wrap"><a href="#" class="nav-item"
+					target="_self" id="downloads">资源下载</a></li>
+				<li class="subnav-wrap"><a href="#" class="nav-item"
+					target="_self" id="jobs">最新求职</a></li>
+				<li class="subnav-wrap"><a href="#" class="nav-item"
+					target="_self" id="community">吐槽一下</a></li>
+			</ul>
+
+
+			<!--登录注册开始-->
+			<div class="top-login">
+				<a href="../register/register.html" class="register">注册</a>| <a
+					href="../login/login.html" target="_top" class="signin">登录</a>
+
+			</div>
+			<ul class="top-member" id="top_memu">
+				<li class="top-user hover-btn"><a
+					href="#" ><img
+						id="profile" src="../../images/member/nophoto.gif" width="40" height="40" /></a>
+					<ul class="my-hidden">
+						<li><a href="#" id="main-page" target="_self" title="个人主页">个人主页</a></li>
+						<li><a href="#" id="my-setting" target="_self" title="我的设置">我的设置</a></li>
+						<li><a
+							href="#" id="my-logout" target="_self" title="退出登录">退出登录</a></li>
+					</ul></li>
+			</ul>
+			<!--登录注册结束-->
+			<!--顶部搜索开始-->
+			<div class="top-search" id="top_search">
+				<form action="" method="get">
+					<input type="hidden" name="m" value="search" /> <input
+						type="hidden" name="c" value="index" /> <input type="hidden"
+						name="a" value="init" /> <input type="hidden" name="typeid"
+						value="56" id="typeid" />
+					<!---input type="hidden" name="typeid" value="" id="typeid"/ -->
+					<input type="hidden" name="siteid" value="1" id="siteid" /> <input
+						class="top-input" name="q" type="text" autocomplete="off"
+						placeholder="搜索贴子、用户或课程..." title="搜索贴子、用户或课程..." />
+					<button class="btn-search" type="submit"></button>
+				</form>
+			</div>
+			<!--顶部搜索结束-->
+
+		</div>
+		<!--导航结束-->
+	<h1 id="wel">欢迎来到柠檬班学习!!!!!</h1>
+</body>
+</html>
